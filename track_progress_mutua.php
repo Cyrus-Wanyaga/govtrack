@@ -1,6 +1,6 @@
 <?php
     $servername = "localhost";
-    $username = "cyrus1";
+    $username = "cyrus";
     $password = "";
     $db_name = "govtrack";
     
