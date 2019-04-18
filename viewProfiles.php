@@ -11,8 +11,9 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
-    
-    $sql = "SELECT * FROM projects WHERE profileID = '1'";
+
+    $sql = "SELECT profileID, firstname, secondname, bio, wikipedia, role 
+     FROM profiles";
     
     $query = mysqli_query($conn, $sql);
     
@@ -29,7 +30,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/earth-icon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Track Progress</title>
+    <title>View Profiles</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width"/>
@@ -95,44 +96,42 @@
         }
         </style>
 </head>
+
 <body>
-    <div class="page-header" data-parallax="false" style="background-image: url('assets/img/Uhuru-Kenyatta.jpg');">
-			<div class="filter"></div>
-			<div class="container">
-			    <div class="motto text-center">
-			        <h1>Uhuru Kenyatta</h1>
-			        <br/>
-			    </div>
-			</div>
-    </div>
     <div class="main">
-		<div class="section text-center">
-            <div class="container">
-	            <table class="data-table">
-                    <h2 class="title">Uhuru Kenyatta Track Progress</h2>
-		            <thead>
-			            <tr>
-				            <th>Project Title</th>
-				            <th>Project Description</th>
-				            <th>Project Progress</th>
-			            </tr>
-		            </thead>
-		            <tbody>
-		                <?php
-	    	                while ($row = mysqli_fetch_array($query))
-		                        {
-			                        echo '<tr>
-					                <td>'.$row['proposedProjectTitle'].'</td>
-					                <td>'.$row['proposedProjectDesc'].'</td>
-					                <td>'.$row['projectProgress'].'</td>s
-				                    </tr>';
-		                        }?>
-		            </tbody>
-	            </table>
-			</div>
-			<br/>
-			<a href="profiles.html" class="btn btn-danger btn-round">Back</a>
-		</div>
-    </div>    
+            <div class="section text-center">
+                <div class="container">
+                    <table class="data-table">
+                        <h2 class="title">View Profiles</h2>
+                        <thead>
+                            <tr>
+                                <th>Profile ID</th>
+                                <th>First Name</th>
+                                <th>Second Name</th>
+                                <th>Bio</th>
+                                <th>Wiki Link</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                while ($row = mysqli_fetch_array($query))
+                                    {
+                                        echo '<tr>
+                                        <td>'.$row['profileID'].'</td>
+                                        <td>'.$row['firstname'].'</td>
+                                        <td>'.$row['secondname'].'</td>
+                                        <td>'.$row['bio'].'</td>
+                                        <td>'.$row['wikipedia'].'</td>
+                                        <td>'.$row['role'].'</td>
+                                        </tr>';
+                                    }?>
+                        </tbody>
+                    </table>
+            </div>
+            <br/>
+            <a href="admin.php" class="btn btn-danger btn-round">Back</a>
+        </div>
+    </div>
 </body>
 </html>

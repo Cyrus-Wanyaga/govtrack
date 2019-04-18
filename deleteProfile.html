@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/earth-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/earth-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Delete Profiles</title>
+
+    <meta content="width=device-width", initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width"/>
+
+	<!-- Bootstrap core CSS     -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/paper-kit.css?v=2.1.0" rel="stylesheet"/>
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,300,700" rel="stylesheet" type="text/css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="section landing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="text-center">Delete Politician Profile</h2>
+                        <form class="contact-form" action="deleteProfiles.php" method="POST"> 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label> Profile ID</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="nc-icon nc-single-02"></i>
+                                        </span>
+                                        <input type="number" class="form-control" placeholder="Enter a Number" name="profileID"><br/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 ml-auto mr-auto">
+                                    <button class="btn btn-danger btn-round" id="submit" type="submit" name="delete">Add New Profile</button>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

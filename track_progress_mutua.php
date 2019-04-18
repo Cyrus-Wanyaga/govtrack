@@ -1,6 +1,6 @@
 <?php
     $servername = "localhost";
-    $username = "cyrus";
+    $username = "root";
     $password = "";
     $db_name = "govtrack";
     
@@ -125,7 +125,7 @@
 			                        echo '<tr>
 					                <td>'.$row['proposedProjectTitle'].'</td>
 					                <td>'.$row['proposedProjectDesc'].'</td>
-					                <td>'.$row['projectProgress'].'</td>s
+					                <td>'.$row['projectProgress'].'</td>
 				                    </tr>';
 		                        }?>
 		            </tbody>
